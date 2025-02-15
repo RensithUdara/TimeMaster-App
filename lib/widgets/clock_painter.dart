@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:animated_clock/providers/datetime_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
