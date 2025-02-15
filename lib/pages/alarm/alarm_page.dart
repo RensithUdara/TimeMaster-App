@@ -4,6 +4,8 @@ import 'package:animated_clock/shared/theme_data.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../widgets/clock_painter.dart';
+
 class AlarmPage extends HookConsumerWidget {
   const AlarmPage({super.key});
   @override
@@ -16,6 +18,10 @@ class AlarmPage extends HookConsumerWidget {
       child: Scaffold(
         backgroundColor: Color(0xFF2D2F41),
         floatingActionButton: FloatingActionButton(
+          child: Image.asset(
+            "assets/add_alarm.png",
+            fit: BoxFit.cover,
+          ),
           clipBehavior: Clip.hardEdge,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(22),
@@ -24,10 +30,6 @@ class AlarmPage extends HookConsumerWidget {
             LocalNotificationService()
                 .showNotification(id: 1, title: "title", message: "message");
           },
-          child: Image.asset(
-            "assets/add_alarm.png",
-            fit: BoxFit.cover,
-          ),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -113,7 +115,7 @@ class AlarmPage extends HookConsumerWidget {
                                   ),
                                   SizedBox(width: 8),
                                   Text(
-                                    "alarm.title",
+                                    "alarm.title"!,
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontFamily: 'avenir'),
