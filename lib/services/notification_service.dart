@@ -1,4 +1,5 @@
 import 'dart:developer';
+
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class LocalNotificationService {
@@ -62,8 +63,7 @@ class LocalNotificationService {
     required String title,
     required String message,
   }) {
-    final AndroidNotificationChannel _channel =
-        const AndroidNotificationChannel(
+    final AndroidNotificationChannel channel = const AndroidNotificationChannel(
       'high_importance_channel',
       'Hight Importance Notifications',
       description: 'This channel is used for important notifications.',
@@ -86,9 +86,9 @@ class LocalNotificationService {
             presentSound: true,
           ),
           android: AndroidNotificationDetails(
-            _channel.id,
-            _channel.name,
-            channelDescription: _channel.description,
+            channel.id,
+            channel.name,
+            channelDescription: channel.description,
             icon: '@mipmap/ic_launcher',
             importance: Importance.max,
             priority: Priority.high,
