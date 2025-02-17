@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:animated_clock/providers/datetime_provider.dart';
 import 'package:animated_clock/services/notification_service.dart';
 import 'package:animated_clock/shared/theme_data.dart';
